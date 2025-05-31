@@ -1,0 +1,16 @@
+flask==2.2.3
+flask-cors==3.0.10
+flask-login==0.6.2
+flask-sqlalchemy==3.0.3
+Werkzeug==2.2.3
+gunicorn==20.1.0
+pytest==7.3.1
+# Added for logistics optimizer
+geopy==2.3.0
+certifi==2022.12.7
+requests==2.28.2
+tabulate==0.9.0
+# Added for route visualization
+folium==0.14.0
+polyline==2.0.0
+openrouteservice==2.3.3

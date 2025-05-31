@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>License Plate Recognition</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-car"></i> License Plate Recognition</h1>
+    </header>
+    <main>
+        <section id="form-section">
+            <div class="container">
+                <div class="tabs">
+                    <button type="button" class="tab-btn active" data-tab="upload">Upload Image</button>
+                    <button type="button" class="tab-btn" data-tab="url">Image URL</button>
+                </div>
+                
+                <div class="tab-content active" id="upload-tab">
+                    <div class="upload-container" id="drop-area">
+                        <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                        <p>Drag & drop an image here or click to browse</p>
+                        <input type="file" id="file-input" accept="image/*" hidden>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="url-tab">
+                    <div class="url-container">
+                        <input type="url" id="image-url" placeholder="Enter image URL (https://...)">
+                    </div>
+                </div>
+                
+                <div class="preview-container" id="preview-container">
+                    <div class="preview-header">
+                        <h3>Image Preview</h3>
+                        <button type="button" class="remove-btn" id="remove-btn"><i class="fas fa-times"></i></button>
+                    </div>
+                    <img id="preview-image" src="" alt="Preview">
+                </div>
+                
+                <div class="button-wrapper">
+                    <button type="button" id="submit-btn" class="submit-btn" disabled>
+                        <i class="fas fa-search"></i> Recognize License Plates
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <section id="results-section">
+            <div class="container">
+                <h2>Recognition Results</h2>
+                <div id="loading" class="hidden">
+                    <div class="spinner"></div>
+                    <p>Processing image...</p>
+                </div>
+                <div id="results-container" class="hidden">
+                    <div class="result-summary">
+                        <span id="plate-count">0</span> license plates detected
+                    </div>
+                    <div id="plates-list" class="plates-list"></div>
+                </div>
+                <div id="no-results" class="hidden">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <p>No license plates detected in the image.</p>
+                </div>
+                <div id="error-message" class="hidden">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <p id="error-text"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 License Plate Recognition System</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

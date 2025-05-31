@@ -1,0 +1,2053 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_609b2b961cdd14fb1f8982edac726142 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+                <h3 align="center" style="font-size:16px"><b>Container Yard Management System: Minimum Spanning Tree</b></h3>
+                <h4 align="center" style="font-size:14px">40 Hubs | Total Network Distance: 6048.54 km</h4>
+            
+    
+                <div style="position: fixed; 
+                    bottom: 50px; right: 50px; 
+                    border:2px solid grey; z-index:9999; 
+                    background-color:white;
+                    padding: 10px;
+                    font-size:14px;
+                    ">
+                <div style="font-weight: bold; margin-bottom: 5px;">Major Hubs:</div>
+            
+                    <div>
+                        <i class="fa fa-circle" style="color:darkblue"></i> Maharashtra
+                    </div>
+                
+                    <div>
+                        <i class="fa fa-circle" style="color:red"></i> West Bengal
+                    </div>
+                
+                    <div>
+                        <i class="fa fa-circle" style="color:green"></i> Odisha
+                    </div>
+                
+                    <div>
+                        <i class="fa fa-circle" style="color:purple"></i> Tamil Nadu
+                    </div>
+                
+                    <div>
+                        <i class="fa fa-circle" style="color:orange"></i> Gujarat
+                    </div>
+                
+                    <div>
+                        <i class="fa fa-circle" style="color:darkgreen"></i> Delhi
+                    </div>
+                </div>
+    
+            <div class="folium-map" id="map_609b2b961cdd14fb1f8982edac726142" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_609b2b961cdd14fb1f8982edac726142 = L.map(
+                "map_609b2b961cdd14fb1f8982edac726142",
+                {
+                    center: [21.235073975, 80.95145825],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_95798df4379c2a832a4337e349677df5 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var marker_f297aff9965b89a3295597838b0674f7 = L.marker(
+                [19.033618, 73.035662],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_f8971351597362054510fe00ab54881b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkblue", "prefix": "glyphicon"}
+            );
+            marker_f297aff9965b89a3295597838b0674f7.setIcon(icon_f8971351597362054510fe00ab54881b);
+        
+    
+        var popup_bfa8b40943d25b2faed7ba59f8dad5e5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a2fc74a353aedccad3b14db1b842018c = $(`<div id="html_a2fc74a353aedccad3b14db1b842018c" style="width: 100.0%; height: 100.0%;">Navi Mumbai, Maharashtra</div>`)[0];
+                popup_bfa8b40943d25b2faed7ba59f8dad5e5.setContent(html_a2fc74a353aedccad3b14db1b842018c);
+            
+        
+
+        marker_f297aff9965b89a3295597838b0674f7.bindPopup(popup_bfa8b40943d25b2faed7ba59f8dad5e5)
+        ;
+
+        
+    
+    
+            marker_f297aff9965b89a3295597838b0674f7.bindTooltip(
+                `<div>
+                     Navi Mumbai
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_86807559cb5a1800b9114b851a000f4f = L.marker(
+                [22.064258, 88.11926],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_50043c89bcdd522a22b11951eb4b62db = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_86807559cb5a1800b9114b851a000f4f.setIcon(icon_50043c89bcdd522a22b11951eb4b62db);
+        
+    
+        var popup_7431e155e84d72c795da992c327e4ddb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1775c8df3cb4aba2b4b4d6f47a8d31ce = $(`<div id="html_1775c8df3cb4aba2b4b4d6f47a8d31ce" style="width: 100.0%; height: 100.0%;">Haldia, West Bengal</div>`)[0];
+                popup_7431e155e84d72c795da992c327e4ddb.setContent(html_1775c8df3cb4aba2b4b4d6f47a8d31ce);
+            
+        
+
+        marker_86807559cb5a1800b9114b851a000f4f.bindPopup(popup_7431e155e84d72c795da992c327e4ddb)
+        ;
+
+        
+    
+    
+            marker_86807559cb5a1800b9114b851a000f4f.bindTooltip(
+                `<div>
+                     Haldia
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_20425570cf7ef0e0496a12cd9fe972f9 = L.marker(
+                [23.232716, 87.85383],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_caebdc765dd7556042982872b75bad18 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_20425570cf7ef0e0496a12cd9fe972f9.setIcon(icon_caebdc765dd7556042982872b75bad18);
+        
+    
+        var popup_a4ad14ac2e79b591f0d042aba19f85ed = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_95bec32c7c46e4d86c7b266f2aedf36e = $(`<div id="html_95bec32c7c46e4d86c7b266f2aedf36e" style="width: 100.0%; height: 100.0%;">Bardhaman, West Bengal</div>`)[0];
+                popup_a4ad14ac2e79b591f0d042aba19f85ed.setContent(html_95bec32c7c46e4d86c7b266f2aedf36e);
+            
+        
+
+        marker_20425570cf7ef0e0496a12cd9fe972f9.bindPopup(popup_a4ad14ac2e79b591f0d042aba19f85ed)
+        ;
+
+        
+    
+    
+            marker_20425570cf7ef0e0496a12cd9fe972f9.bindTooltip(
+                `<div>
+                     Bardhaman
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a29b05926f01deb565ba3eedcd727f89 = L.marker(
+                [16.699147, 74.235303],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_3126860cf735d2f2f52b005f7e86cddf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkblue", "prefix": "glyphicon"}
+            );
+            marker_a29b05926f01deb565ba3eedcd727f89.setIcon(icon_3126860cf735d2f2f52b005f7e86cddf);
+        
+    
+        var popup_a46eaedc6e8ed2fb9957e96763e2d6ef = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ed9a8c6b3cd8b9ec8291fd3e5819074b = $(`<div id="html_ed9a8c6b3cd8b9ec8291fd3e5819074b" style="width: 100.0%; height: 100.0%;">Kolhapur, Maharashtra</div>`)[0];
+                popup_a46eaedc6e8ed2fb9957e96763e2d6ef.setContent(html_ed9a8c6b3cd8b9ec8291fd3e5819074b);
+            
+        
+
+        marker_a29b05926f01deb565ba3eedcd727f89.bindPopup(popup_a46eaedc6e8ed2fb9957e96763e2d6ef)
+        ;
+
+        
+    
+    
+            marker_a29b05926f01deb565ba3eedcd727f89.bindTooltip(
+                `<div>
+                     Kolhapur
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_087b623eee89e19d90cf3c737d0ea15c = L.marker(
+                [20.471047, 85.87992],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_311c031c712ca7182a8a34d165a8b199 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_087b623eee89e19d90cf3c737d0ea15c.setIcon(icon_311c031c712ca7182a8a34d165a8b199);
+        
+    
+        var popup_000b084c7b48aef653468540e2f86162 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_94897a077df6e624b02f4772c5d37c40 = $(`<div id="html_94897a077df6e624b02f4772c5d37c40" style="width: 100.0%; height: 100.0%;">Cuttack, Odisha</div>`)[0];
+                popup_000b084c7b48aef653468540e2f86162.setContent(html_94897a077df6e624b02f4772c5d37c40);
+            
+        
+
+        marker_087b623eee89e19d90cf3c737d0ea15c.bindPopup(popup_000b084c7b48aef653468540e2f86162)
+        ;
+
+        
+    
+    
+            marker_087b623eee89e19d90cf3c737d0ea15c.bindTooltip(
+                `<div>
+                     Cuttack
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b95a96c2a2d3e50b6d0b2848da3caa8a = L.marker(
+                [9.925201, 78.119775],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_86415aa0f3ed00d64f6a7e28600d1ae9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_b95a96c2a2d3e50b6d0b2848da3caa8a.setIcon(icon_86415aa0f3ed00d64f6a7e28600d1ae9);
+        
+    
+        var popup_19e22bd2b33636c87f300b68dd7bef36 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c8a1e791ee495f07aba01af40d162262 = $(`<div id="html_c8a1e791ee495f07aba01af40d162262" style="width: 100.0%; height: 100.0%;">Madurai, Tamil Nadu</div>`)[0];
+                popup_19e22bd2b33636c87f300b68dd7bef36.setContent(html_c8a1e791ee495f07aba01af40d162262);
+            
+        
+
+        marker_b95a96c2a2d3e50b6d0b2848da3caa8a.bindPopup(popup_19e22bd2b33636c87f300b68dd7bef36)
+        ;
+
+        
+    
+    
+            marker_b95a96c2a2d3e50b6d0b2848da3caa8a.bindTooltip(
+                `<div>
+                     Madurai
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_40536c78c4b4689f4a9f345664303a21 = L.marker(
+                [26.726044, 88.394222],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_a3e7ef0bbd52c0761b0fe53d8f774ec7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_40536c78c4b4689f4a9f345664303a21.setIcon(icon_a3e7ef0bbd52c0761b0fe53d8f774ec7);
+        
+    
+        var popup_4f0242639441ac8a6412dde1504ddbb5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e38e12682ec72c9557d35752f26dbe28 = $(`<div id="html_e38e12682ec72c9557d35752f26dbe28" style="width: 100.0%; height: 100.0%;">Siliguri, West Bengal</div>`)[0];
+                popup_4f0242639441ac8a6412dde1504ddbb5.setContent(html_e38e12682ec72c9557d35752f26dbe28);
+            
+        
+
+        marker_40536c78c4b4689f4a9f345664303a21.bindPopup(popup_4f0242639441ac8a6412dde1504ddbb5)
+        ;
+
+        
+    
+    
+            marker_40536c78c4b4689f4a9f345664303a21.bindTooltip(
+                `<div>
+                     Siliguri
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0b2639b440359170c39f2f597796fb52 = L.marker(
+                [21.928826, 86.733417],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_7c77d727ce015f00e7295408e16ddf03 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_0b2639b440359170c39f2f597796fb52.setIcon(icon_7c77d727ce015f00e7295408e16ddf03);
+        
+    
+        var popup_ddbd3df347380fa2ca11345814534796 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5c2b7084b88a4ed528ffa9fe438bfb36 = $(`<div id="html_5c2b7084b88a4ed528ffa9fe438bfb36" style="width: 100.0%; height: 100.0%;">Baripada, Odisha</div>`)[0];
+                popup_ddbd3df347380fa2ca11345814534796.setContent(html_5c2b7084b88a4ed528ffa9fe438bfb36);
+            
+        
+
+        marker_0b2639b440359170c39f2f597796fb52.bindPopup(popup_ddbd3df347380fa2ca11345814534796)
+        ;
+
+        
+    
+    
+            marker_0b2639b440359170c39f2f597796fb52.bindTooltip(
+                `<div>
+                     Baripada
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5baf7ac7494e7f42111d581dd5b189db = L.marker(
+                [23.669562, 86.943659],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_43f95c2db05c29054a39d5fbb988aa5a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_5baf7ac7494e7f42111d581dd5b189db.setIcon(icon_43f95c2db05c29054a39d5fbb988aa5a);
+        
+    
+        var popup_3dc13bab79f7504814c4778a0a2bc514 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1d9ff37cef6220972500ca8697cc3856 = $(`<div id="html_1d9ff37cef6220972500ca8697cc3856" style="width: 100.0%; height: 100.0%;">Asansol, West Bengal</div>`)[0];
+                popup_3dc13bab79f7504814c4778a0a2bc514.setContent(html_1d9ff37cef6220972500ca8697cc3856);
+            
+        
+
+        marker_5baf7ac7494e7f42111d581dd5b189db.bindPopup(popup_3dc13bab79f7504814c4778a0a2bc514)
+        ;
+
+        
+    
+    
+            marker_5baf7ac7494e7f42111d581dd5b189db.bindTooltip(
+                `<div>
+                     Asansol
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a0c87110df529ca9399a48e431c9dbca = L.marker(
+                [22.572912, 88.361454],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_bf185f1c373b21f8909be7e75b14c524 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_a0c87110df529ca9399a48e431c9dbca.setIcon(icon_bf185f1c373b21f8909be7e75b14c524);
+        
+    
+        var popup_edfac1405dcc3f80254b1ab942c23e70 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_95b38549a472347d9a12309b8f05506e = $(`<div id="html_95b38549a472347d9a12309b8f05506e" style="width: 100.0%; height: 100.0%;">Kolkata, West Bengal</div>`)[0];
+                popup_edfac1405dcc3f80254b1ab942c23e70.setContent(html_95b38549a472347d9a12309b8f05506e);
+            
+        
+
+        marker_a0c87110df529ca9399a48e431c9dbca.bindPopup(popup_edfac1405dcc3f80254b1ab942c23e70)
+        ;
+
+        
+    
+    
+            marker_a0c87110df529ca9399a48e431c9dbca.bindTooltip(
+                `<div>
+                     Kolkata
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fc598961dbf0b47a8ff6462352c895d7 = L.marker(
+                [21.464943, 83.977969],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_424058c5843d8787a2640aae2e69b907 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_fc598961dbf0b47a8ff6462352c895d7.setIcon(icon_424058c5843d8787a2640aae2e69b907);
+        
+    
+        var popup_e93b9476a1f21fdff1c38d1ed5c3d5c5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f060c1832084a0bfbd04aa5c314d5f6d = $(`<div id="html_f060c1832084a0bfbd04aa5c314d5f6d" style="width: 100.0%; height: 100.0%;">Sambalpur, Odisha</div>`)[0];
+                popup_e93b9476a1f21fdff1c38d1ed5c3d5c5.setContent(html_f060c1832084a0bfbd04aa5c314d5f6d);
+            
+        
+
+        marker_fc598961dbf0b47a8ff6462352c895d7.bindPopup(popup_e93b9476a1f21fdff1c38d1ed5c3d5c5)
+        ;
+
+        
+    
+    
+            marker_fc598961dbf0b47a8ff6462352c895d7.bindTooltip(
+                `<div>
+                     Sambalpur
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8a15fc46c7c956a3cd71be2d94e116b5 = L.marker(
+                [22.587306, 88.258067],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_5e8ca35540dee5e61f25c38e8ca7882a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_8a15fc46c7c956a3cd71be2d94e116b5.setIcon(icon_5e8ca35540dee5e61f25c38e8ca7882a);
+        
+    
+        var popup_ff6ede3944fd654c8dc28de7d0baff36 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ec848567e5fb2e6ed5382579eaccceb3 = $(`<div id="html_ec848567e5fb2e6ed5382579eaccceb3" style="width: 100.0%; height: 100.0%;">Howrah, West Bengal</div>`)[0];
+                popup_ff6ede3944fd654c8dc28de7d0baff36.setContent(html_ec848567e5fb2e6ed5382579eaccceb3);
+            
+        
+
+        marker_8a15fc46c7c956a3cd71be2d94e116b5.bindPopup(popup_ff6ede3944fd654c8dc28de7d0baff36)
+        ;
+
+        
+    
+    
+            marker_8a15fc46c7c956a3cd71be2d94e116b5.bindTooltip(
+                `<div>
+                     Howrah
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_adb34728cb5bf77ddb01cf38a5a6f1ea = L.marker(
+                [22.258521, 84.847716],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_98455df6df135fb8e36bba40f672373f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_adb34728cb5bf77ddb01cf38a5a6f1ea.setIcon(icon_98455df6df135fb8e36bba40f672373f);
+        
+    
+        var popup_63eeabdeac50ae9c3d99f80f89cbe90c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3e35f4716f06a1dd62776bab942f3c28 = $(`<div id="html_3e35f4716f06a1dd62776bab942f3c28" style="width: 100.0%; height: 100.0%;">Rourkela, Odisha</div>`)[0];
+                popup_63eeabdeac50ae9c3d99f80f89cbe90c.setContent(html_3e35f4716f06a1dd62776bab942f3c28);
+            
+        
+
+        marker_adb34728cb5bf77ddb01cf38a5a6f1ea.bindPopup(popup_63eeabdeac50ae9c3d99f80f89cbe90c)
+        ;
+
+        
+    
+    
+            marker_adb34728cb5bf77ddb01cf38a5a6f1ea.bindTooltip(
+                `<div>
+                     Rourkela
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9873535d96e508ccabd0258c92404741 = L.marker(
+                [19.810011, 85.827176],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_8f08ee07c311aaf9a818cb9723027908 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_9873535d96e508ccabd0258c92404741.setIcon(icon_8f08ee07c311aaf9a818cb9723027908);
+        
+    
+        var popup_1de206f414349e55cee6eb6f4b1f8c1e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9abe8083b9b1be0265d4c13d2ff9b8a2 = $(`<div id="html_9abe8083b9b1be0265d4c13d2ff9b8a2" style="width: 100.0%; height: 100.0%;">Puri, Odisha</div>`)[0];
+                popup_1de206f414349e55cee6eb6f4b1f8c1e.setContent(html_9abe8083b9b1be0265d4c13d2ff9b8a2);
+            
+        
+
+        marker_9873535d96e508ccabd0258c92404741.bindPopup(popup_1de206f414349e55cee6eb6f4b1f8c1e)
+        ;
+
+        
+    
+    
+            marker_9873535d96e508ccabd0258c92404741.bindTooltip(
+                `<div>
+                     Puri
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_53cb0a8f0a8d52101f3ca84d8b9c3ceb = L.marker(
+                [22.291606, 70.793217],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_b12af855a5ccc3da835716ec3ea26c86 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_53cb0a8f0a8d52101f3ca84d8b9c3ceb.setIcon(icon_b12af855a5ccc3da835716ec3ea26c86);
+        
+    
+        var popup_72f05e8d0bf2c0417556bf2d8e5ce1e2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_33255f4733f4704da4d20ad2d508a95a = $(`<div id="html_33255f4733f4704da4d20ad2d508a95a" style="width: 100.0%; height: 100.0%;">Rajkot, Gujarat</div>`)[0];
+                popup_72f05e8d0bf2c0417556bf2d8e5ce1e2.setContent(html_33255f4733f4704da4d20ad2d508a95a);
+            
+        
+
+        marker_53cb0a8f0a8d52101f3ca84d8b9c3ceb.bindPopup(popup_72f05e8d0bf2c0417556bf2d8e5ce1e2)
+        ;
+
+        
+    
+    
+            marker_53cb0a8f0a8d52101f3ca84d8b9c3ceb.bindTooltip(
+                `<div>
+                     Rajkot
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_047fcf463d9fded1a4144851b2909e2d = L.marker(
+                [23.521529, 87.305634],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_eca83b14cb5df09acd6f16e7265d4ebf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_047fcf463d9fded1a4144851b2909e2d.setIcon(icon_eca83b14cb5df09acd6f16e7265d4ebf);
+        
+    
+        var popup_e8f13e6bf5cf9dccf81d5dd9331cecc1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7c8632727881538cf98bb80c5ed56b67 = $(`<div id="html_7c8632727881538cf98bb80c5ed56b67" style="width: 100.0%; height: 100.0%;">Durgapur, West Bengal</div>`)[0];
+                popup_e8f13e6bf5cf9dccf81d5dd9331cecc1.setContent(html_7c8632727881538cf98bb80c5ed56b67);
+            
+        
+
+        marker_047fcf463d9fded1a4144851b2909e2d.bindPopup(popup_e8f13e6bf5cf9dccf81d5dd9331cecc1)
+        ;
+
+        
+    
+    
+            marker_047fcf463d9fded1a4144851b2909e2d.bindTooltip(
+                `<div>
+                     Durgapur
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8ff2c4b91c4bf64433f0ed6e6a3e5a34 = L.marker(
+                [20.848924, 85.106252],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_b494788d7e6a1ec8afaa6190ce670db5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_8ff2c4b91c4bf64433f0ed6e6a3e5a34.setIcon(icon_b494788d7e6a1ec8afaa6190ce670db5);
+        
+    
+        var popup_649f22dcd12a88b2de8b7857a8764422 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bfa894379081b4193e75a1497538bac1 = $(`<div id="html_bfa894379081b4193e75a1497538bac1" style="width: 100.0%; height: 100.0%;">Angul, Odisha</div>`)[0];
+                popup_649f22dcd12a88b2de8b7857a8764422.setContent(html_bfa894379081b4193e75a1497538bac1);
+            
+        
+
+        marker_8ff2c4b91c4bf64433f0ed6e6a3e5a34.bindPopup(popup_649f22dcd12a88b2de8b7857a8764422)
+        ;
+
+        
+    
+    
+            marker_8ff2c4b91c4bf64433f0ed6e6a3e5a34.bindTooltip(
+                `<div>
+                     Angul
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_99671e56d410e958132fa134d63fb1a0 = L.marker(
+                [20.286648, 85.819319],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_692867a06b9f7d429a8013a9488824d1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_99671e56d410e958132fa134d63fb1a0.setIcon(icon_692867a06b9f7d429a8013a9488824d1);
+        
+    
+        var popup_918a9f49e31ee72d326eddcbc3766550 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d016b7ac82eb50ba00bdf6bf2660dfd9 = $(`<div id="html_d016b7ac82eb50ba00bdf6bf2660dfd9" style="width: 100.0%; height: 100.0%;">Bhubaneswar, Odisha</div>`)[0];
+                popup_918a9f49e31ee72d326eddcbc3766550.setContent(html_d016b7ac82eb50ba00bdf6bf2660dfd9);
+            
+        
+
+        marker_99671e56d410e958132fa134d63fb1a0.bindPopup(popup_918a9f49e31ee72d326eddcbc3766550)
+        ;
+
+        
+    
+    
+            marker_99671e56d410e958132fa134d63fb1a0.bindTooltip(
+                `<div>
+                     Bhubaneswar
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2d4d4686e91fc27e76f7f2b2a9789da9 = L.marker(
+                [17.65678, 75.907452],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_b3ba2d0238eadae44b03de2f376a1f07 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkblue", "prefix": "glyphicon"}
+            );
+            marker_2d4d4686e91fc27e76f7f2b2a9789da9.setIcon(icon_b3ba2d0238eadae44b03de2f376a1f07);
+        
+    
+        var popup_79411926748674f4f0994f80ba2a63c2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2e6fa505eb82d6e879f7401957be08ff = $(`<div id="html_2e6fa505eb82d6e879f7401957be08ff" style="width: 100.0%; height: 100.0%;">Solapur, Maharashtra</div>`)[0];
+                popup_79411926748674f4f0994f80ba2a63c2.setContent(html_2e6fa505eb82d6e879f7401957be08ff);
+            
+        
+
+        marker_2d4d4686e91fc27e76f7f2b2a9789da9.bindPopup(popup_79411926748674f4f0994f80ba2a63c2)
+        ;
+
+        
+    
+    
+            marker_2d4d4686e91fc27e76f7f2b2a9789da9.bindTooltip(
+                `<div>
+                     Solapur
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1b061434e566f13d6ba806fb88e779ae = L.marker(
+                [28.679142, 77.209021],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_8b3b04003345207e713a9c4a0c09f3d3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkgreen", "prefix": "glyphicon"}
+            );
+            marker_1b061434e566f13d6ba806fb88e779ae.setIcon(icon_8b3b04003345207e713a9c4a0c09f3d3);
+        
+    
+        var popup_d31dcbd3e8e3229c8327458227e406b0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4f41e2613e2f3193432ad6bf4e3880dc = $(`<div id="html_4f41e2613e2f3193432ad6bf4e3880dc" style="width: 100.0%; height: 100.0%;">North Delhi, Delhi</div>`)[0];
+                popup_d31dcbd3e8e3229c8327458227e406b0.setContent(html_4f41e2613e2f3193432ad6bf4e3880dc);
+            
+        
+
+        marker_1b061434e566f13d6ba806fb88e779ae.bindPopup(popup_d31dcbd3e8e3229c8327458227e406b0)
+        ;
+
+        
+    
+    
+            marker_1b061434e566f13d6ba806fb88e779ae.bindTooltip(
+                `<div>
+                     North Delhi
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b37cd60d6c835ddd18e1de6482411b7d = L.marker(
+                [11.016844, 76.955832],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_0c55f6a35aeeabb345b6310ed9f2b6ee = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_b37cd60d6c835ddd18e1de6482411b7d.setIcon(icon_0c55f6a35aeeabb345b6310ed9f2b6ee);
+        
+    
+        var popup_31291d73ffe30b2f615cb940fa23261d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_56fbb045047f94142ba043e725d7881f = $(`<div id="html_56fbb045047f94142ba043e725d7881f" style="width: 100.0%; height: 100.0%;">Coimbatore, Tamil Nadu</div>`)[0];
+                popup_31291d73ffe30b2f615cb940fa23261d.setContent(html_56fbb045047f94142ba043e725d7881f);
+            
+        
+
+        marker_b37cd60d6c835ddd18e1de6482411b7d.bindPopup(popup_31291d73ffe30b2f615cb940fa23261d)
+        ;
+
+        
+    
+    
+            marker_b37cd60d6c835ddd18e1de6482411b7d.bindTooltip(
+                `<div>
+                     Coimbatore
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_96077d2a022948b158abd47c331b8660 = L.marker(
+                [22.349619, 87.236139],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_d2237bbe8ce274dac0f5bfdd5469a30e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_96077d2a022948b158abd47c331b8660.setIcon(icon_d2237bbe8ce274dac0f5bfdd5469a30e);
+        
+    
+        var popup_6390fd75dd9c112d13abd7f95e563a0e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_81fcafddd8e8ae2d20878aadd8f433d3 = $(`<div id="html_81fcafddd8e8ae2d20878aadd8f433d3" style="width: 100.0%; height: 100.0%;">Kharagpur, West Bengal</div>`)[0];
+                popup_6390fd75dd9c112d13abd7f95e563a0e.setContent(html_81fcafddd8e8ae2d20878aadd8f433d3);
+            
+        
+
+        marker_96077d2a022948b158abd47c331b8660.bindPopup(popup_6390fd75dd9c112d13abd7f95e563a0e)
+        ;
+
+        
+    
+    
+            marker_96077d2a022948b158abd47c331b8660.bindTooltip(
+                `<div>
+                     Kharagpur
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_970df997867f9f4c49e3646a01c5548e = L.marker(
+                [13.084113, 80.267506],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_1c8f4c5d1324551b9121510edd8d1bc5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_970df997867f9f4c49e3646a01c5548e.setIcon(icon_1c8f4c5d1324551b9121510edd8d1bc5);
+        
+    
+        var popup_7dc92e7fe73ae269208c2620d29ab7b0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0867dd6dc4c893146c47f20fbd46b5bc = $(`<div id="html_0867dd6dc4c893146c47f20fbd46b5bc" style="width: 100.0%; height: 100.0%;">Chennai, Tamil Nadu</div>`)[0];
+                popup_7dc92e7fe73ae269208c2620d29ab7b0.setContent(html_0867dd6dc4c893146c47f20fbd46b5bc);
+            
+        
+
+        marker_970df997867f9f4c49e3646a01c5548e.bindPopup(popup_7dc92e7fe73ae269208c2620d29ab7b0)
+        ;
+
+        
+    
+    
+            marker_970df997867f9f4c49e3646a01c5548e.bindTooltip(
+                `<div>
+                     Chennai
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_91d656b46eef7e81533a2a84b5b45bd5 = L.marker(
+                [22.310696, 73.192635],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_ad6b03c2d703f6f5ce98d32ff736e4c6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_91d656b46eef7e81533a2a84b5b45bd5.setIcon(icon_ad6b03c2d703f6f5ce98d32ff736e4c6);
+        
+    
+        var popup_8200c8373d1877fdaaac56d091dd265d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cab4b3c39820c2b20ae554ebbbe97536 = $(`<div id="html_cab4b3c39820c2b20ae554ebbbe97536" style="width: 100.0%; height: 100.0%;">Vadodara, Gujarat</div>`)[0];
+                popup_8200c8373d1877fdaaac56d091dd265d.setContent(html_cab4b3c39820c2b20ae554ebbbe97536);
+            
+        
+
+        marker_91d656b46eef7e81533a2a84b5b45bd5.bindPopup(popup_8200c8373d1877fdaaac56d091dd265d)
+        ;
+
+        
+    
+    
+            marker_91d656b46eef7e81533a2a84b5b45bd5.bindTooltip(
+                `<div>
+                     Vadodara
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_99ef2014e7d0cc5b36a2cb4df35d615f = L.marker(
+                [19.315731, 84.792629],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_ef2d04ae72cd457c05c5d56ea05c2694 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_99ef2014e7d0cc5b36a2cb4df35d615f.setIcon(icon_ef2d04ae72cd457c05c5d56ea05c2694);
+        
+    
+        var popup_dace675d13a2e0e7c7b33f22da97138d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b895aa7e59a78028c4b21bea1a5f603d = $(`<div id="html_b895aa7e59a78028c4b21bea1a5f603d" style="width: 100.0%; height: 100.0%;">Berhampur, Odisha</div>`)[0];
+                popup_dace675d13a2e0e7c7b33f22da97138d.setContent(html_b895aa7e59a78028c4b21bea1a5f603d);
+            
+        
+
+        marker_99ef2014e7d0cc5b36a2cb4df35d615f.bindPopup(popup_dace675d13a2e0e7c7b33f22da97138d)
+        ;
+
+        
+    
+    
+            marker_99ef2014e7d0cc5b36a2cb4df35d615f.bindTooltip(
+                `<div>
+                     Berhampur
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6a1c272f3ad343e059be9c37c600a796 = L.marker(
+                [28.613407, 77.216016],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_aedf403f671b2759bf6df8f3085adc6c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkgreen", "prefix": "glyphicon"}
+            );
+            marker_6a1c272f3ad343e059be9c37c600a796.setIcon(icon_aedf403f671b2759bf6df8f3085adc6c);
+        
+    
+        var popup_48b1451d4812a291b678aeaa820de142 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1de61e8f8e27e1e6f99fe7307b27546d = $(`<div id="html_1de61e8f8e27e1e6f99fe7307b27546d" style="width: 100.0%; height: 100.0%;">New Delhi, Delhi</div>`)[0];
+                popup_48b1451d4812a291b678aeaa820de142.setContent(html_1de61e8f8e27e1e6f99fe7307b27546d);
+            
+        
+
+        marker_6a1c272f3ad343e059be9c37c600a796.bindPopup(popup_48b1451d4812a291b678aeaa820de142)
+        ;
+
+        
+    
+    
+            marker_6a1c272f3ad343e059be9c37c600a796.bindTooltip(
+                `<div>
+                     New Delhi
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7dddf8275ed64c0008f104cea56ff1a9 = L.marker(
+                [21.494781, 86.941383],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_3d3578b74ce5f204b977e14075de2bd4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_7dddf8275ed64c0008f104cea56ff1a9.setIcon(icon_3d3578b74ce5f204b977e14075de2bd4);
+        
+    
+        var popup_58c9b8b0cb4f845f8273d5f8b9ee9c72 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c8326940cfb39ee934285127888f5c4b = $(`<div id="html_c8326940cfb39ee934285127888f5c4b" style="width: 100.0%; height: 100.0%;">Balasore, Odisha</div>`)[0];
+                popup_58c9b8b0cb4f845f8273d5f8b9ee9c72.setContent(html_c8326940cfb39ee934285127888f5c4b);
+            
+        
+
+        marker_7dddf8275ed64c0008f104cea56ff1a9.bindPopup(popup_58c9b8b0cb4f845f8273d5f8b9ee9c72)
+        ;
+
+        
+    
+    
+            marker_7dddf8275ed64c0008f104cea56ff1a9.bindTooltip(
+                `<div>
+                     Balasore
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a78ef16485ddec1f6ebf9bbd49312345 = L.marker(
+                [19.877461, 75.350927],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_90f21da8d21e67109c4b969655c31be2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkblue", "prefix": "glyphicon"}
+            );
+            marker_a78ef16485ddec1f6ebf9bbd49312345.setIcon(icon_90f21da8d21e67109c4b969655c31be2);
+        
+    
+        var popup_72ae6776bd9606dc81e7ddfa3b0ee81e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_753ff970a220b79449f1544781eedb37 = $(`<div id="html_753ff970a220b79449f1544781eedb37" style="width: 100.0%; height: 100.0%;">Aurangabad, Maharashtra</div>`)[0];
+                popup_72ae6776bd9606dc81e7ddfa3b0ee81e.setContent(html_753ff970a220b79449f1544781eedb37);
+            
+        
+
+        marker_a78ef16485ddec1f6ebf9bbd49312345.bindPopup(popup_72ae6776bd9606dc81e7ddfa3b0ee81e)
+        ;
+
+        
+    
+    
+            marker_a78ef16485ddec1f6ebf9bbd49312345.bindTooltip(
+                `<div>
+                     Aurangabad
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e1acee14d51defbf48233c3720f8530f = L.marker(
+                [28.543145, 77.160732],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_287959f7b26549d61bf4f861a9a355b0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkgreen", "prefix": "glyphicon"}
+            );
+            marker_e1acee14d51defbf48233c3720f8530f.setIcon(icon_287959f7b26549d61bf4f861a9a355b0);
+        
+    
+        var popup_83e77ef539802fdcdae04ddcc429467f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_73e191163ce9281e23d404a9fd6245e5 = $(`<div id="html_73e191163ce9281e23d404a9fd6245e5" style="width: 100.0%; height: 100.0%;">South Delhi, Delhi</div>`)[0];
+                popup_83e77ef539802fdcdae04ddcc429467f.setContent(html_73e191163ce9281e23d404a9fd6245e5);
+            
+        
+
+        marker_e1acee14d51defbf48233c3720f8530f.bindPopup(popup_83e77ef539802fdcdae04ddcc429467f)
+        ;
+
+        
+    
+    
+            marker_e1acee14d51defbf48233c3720f8530f.bindTooltip(
+                `<div>
+                     South Delhi
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b229aafdb37350db20e1623dfa6052c6 = L.marker(
+                [18.526, 73.862396],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_c5442f11748be35e63ecaecc2d8372ec = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkblue", "prefix": "glyphicon"}
+            );
+            marker_b229aafdb37350db20e1623dfa6052c6.setIcon(icon_c5442f11748be35e63ecaecc2d8372ec);
+        
+    
+        var popup_91311a0bd101c1d2d07a47cb4ef20a1f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_726c223763ec736c93e9701d417a9f62 = $(`<div id="html_726c223763ec736c93e9701d417a9f62" style="width: 100.0%; height: 100.0%;">Pune, Maharashtra</div>`)[0];
+                popup_91311a0bd101c1d2d07a47cb4ef20a1f.setContent(html_726c223763ec736c93e9701d417a9f62);
+            
+        
+
+        marker_b229aafdb37350db20e1623dfa6052c6.bindPopup(popup_91311a0bd101c1d2d07a47cb4ef20a1f)
+        ;
+
+        
+    
+    
+            marker_b229aafdb37350db20e1623dfa6052c6.bindTooltip(
+                `<div>
+                     Pune
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e29fd2b8c6709aaacda0c19f08912541 = L.marker(
+                [20.005171, 73.795204],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_b5b623d8ca312268080407d9a15cc795 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkblue", "prefix": "glyphicon"}
+            );
+            marker_e29fd2b8c6709aaacda0c19f08912541.setIcon(icon_b5b623d8ca312268080407d9a15cc795);
+        
+    
+        var popup_399a3ee678d1e43e975d9d9b5206b418 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_13c48c92360a3067a8f4abce0406963b = $(`<div id="html_13c48c92360a3067a8f4abce0406963b" style="width: 100.0%; height: 100.0%;">Nashik, Maharashtra</div>`)[0];
+                popup_399a3ee678d1e43e975d9d9b5206b418.setContent(html_13c48c92360a3067a8f4abce0406963b);
+            
+        
+
+        marker_e29fd2b8c6709aaacda0c19f08912541.bindPopup(popup_399a3ee678d1e43e975d9d9b5206b418)
+        ;
+
+        
+    
+    
+            marker_e29fd2b8c6709aaacda0c19f08912541.bindTooltip(
+                `<div>
+                     Nashik
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7afb5d2a7aa969db48bc0deedb66ca32 = L.marker(
+                [19.226139, 72.988056],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_e54cf8ecedfd1f9ee8b933d908273719 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkblue", "prefix": "glyphicon"}
+            );
+            marker_7afb5d2a7aa969db48bc0deedb66ca32.setIcon(icon_e54cf8ecedfd1f9ee8b933d908273719);
+        
+    
+        var popup_a63c31eee0d4fa5263ed66892e13e4c8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_81af7c4c8369a138e34682a540a790e3 = $(`<div id="html_81af7c4c8369a138e34682a540a790e3" style="width: 100.0%; height: 100.0%;">Thane, Maharashtra</div>`)[0];
+                popup_a63c31eee0d4fa5263ed66892e13e4c8.setContent(html_81af7c4c8369a138e34682a540a790e3);
+            
+        
+
+        marker_7afb5d2a7aa969db48bc0deedb66ca32.bindPopup(popup_a63c31eee0d4fa5263ed66892e13e4c8)
+        ;
+
+        
+    
+    
+            marker_7afb5d2a7aa969db48bc0deedb66ca32.bindTooltip(
+                `<div>
+                     Thane
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7c21891c749775480921db94bdde9af3 = L.marker(
+                [19.073313, 72.873124],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_2be64d183fdda972d41ae79ea8ae2533 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkblue", "prefix": "glyphicon"}
+            );
+            marker_7c21891c749775480921db94bdde9af3.setIcon(icon_2be64d183fdda972d41ae79ea8ae2533);
+        
+    
+        var popup_9261543251ee1d8b62f5381195bddf06 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9c457c1f4d0b36f2d80d9061c8f98f76 = $(`<div id="html_9c457c1f4d0b36f2d80d9061c8f98f76" style="width: 100.0%; height: 100.0%;">Mumbai, Maharashtra</div>`)[0];
+                popup_9261543251ee1d8b62f5381195bddf06.setContent(html_9c457c1f4d0b36f2d80d9061c8f98f76);
+            
+        
+
+        marker_7c21891c749775480921db94bdde9af3.bindPopup(popup_9261543251ee1d8b62f5381195bddf06)
+        ;
+
+        
+    
+    
+            marker_7c21891c749775480921db94bdde9af3.bindTooltip(
+                `<div>
+                     Mumbai
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_20f518e28be3c7810179438d5258af9a = L.marker(
+                [27.044137, 88.269625],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_42ea46114546a591f585ae4bbf4b7a63 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_20f518e28be3c7810179438d5258af9a.setIcon(icon_42ea46114546a591f585ae4bbf4b7a63);
+        
+    
+        var popup_77c0dab002765d4bf94dc22eff6c65ca = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b9ec27bac4a3db26f17b7e0713872956 = $(`<div id="html_b9ec27bac4a3db26f17b7e0713872956" style="width: 100.0%; height: 100.0%;">Darjeeling, West Bengal</div>`)[0];
+                popup_77c0dab002765d4bf94dc22eff6c65ca.setContent(html_b9ec27bac4a3db26f17b7e0713872956);
+            
+        
+
+        marker_20f518e28be3c7810179438d5258af9a.bindPopup(popup_77c0dab002765d4bf94dc22eff6c65ca)
+        ;
+
+        
+    
+    
+            marker_20f518e28be3c7810179438d5258af9a.bindTooltip(
+                `<div>
+                     Darjeeling
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_60789f7eccb3fa1cb02f2ea6f384bb07 = L.marker(
+                [21.861882, 84.015541],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_9c993ae5cb7b4f075fac3e1bed186fe0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_60789f7eccb3fa1cb02f2ea6f384bb07.setIcon(icon_9c993ae5cb7b4f075fac3e1bed186fe0);
+        
+    
+        var popup_bdf3fedbab9ac1e38562dcb130821133 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_30cf1e9ff2d71a9fb848bfa9a6f4244a = $(`<div id="html_30cf1e9ff2d71a9fb848bfa9a6f4244a" style="width: 100.0%; height: 100.0%;">Jharsuguda, Odisha</div>`)[0];
+                popup_bdf3fedbab9ac1e38562dcb130821133.setContent(html_30cf1e9ff2d71a9fb848bfa9a6f4244a);
+            
+        
+
+        marker_60789f7eccb3fa1cb02f2ea6f384bb07.bindPopup(popup_bdf3fedbab9ac1e38562dcb130821133)
+        ;
+
+        
+    
+    
+            marker_60789f7eccb3fa1cb02f2ea6f384bb07.bindTooltip(
+                `<div>
+                     Jharsuguda
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9d30d8aa58c54ea1c064a4c076c19060 = L.marker(
+                [23.030405, 72.562137],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_c19b2561265d94c845e492972660f6b5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_9d30d8aa58c54ea1c064a4c076c19060.setIcon(icon_c19b2561265d94c845e492972660f6b5);
+        
+    
+        var popup_deab66df6cd23eecf59b3f78ce7445d9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_857681057dc7ddfa55027fe1f612b723 = $(`<div id="html_857681057dc7ddfa55027fe1f612b723" style="width: 100.0%; height: 100.0%;">Ahmedabad, Gujarat</div>`)[0];
+                popup_deab66df6cd23eecf59b3f78ce7445d9.setContent(html_857681057dc7ddfa55027fe1f612b723);
+            
+        
+
+        marker_9d30d8aa58c54ea1c064a4c076c19060.bindPopup(popup_deab66df6cd23eecf59b3f78ce7445d9)
+        ;
+
+        
+    
+    
+            marker_9d30d8aa58c54ea1c064a4c076c19060.bindTooltip(
+                `<div>
+                     Ahmedabad
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f2e1aadd20d55e0795da094336075d69 = L.marker(
+                [25.017916, 88.139606],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_ecbea107c838289e255239407c2da148 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_f2e1aadd20d55e0795da094336075d69.setIcon(icon_ecbea107c838289e255239407c2da148);
+        
+    
+        var popup_c858dc953fa6df2622973c2fa67f99cb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5721388672dae0ea84d70bd4a0c1ba08 = $(`<div id="html_5721388672dae0ea84d70bd4a0c1ba08" style="width: 100.0%; height: 100.0%;">Malda, West Bengal</div>`)[0];
+                popup_c858dc953fa6df2622973c2fa67f99cb.setContent(html_5721388672dae0ea84d70bd4a0c1ba08);
+            
+        
+
+        marker_f2e1aadd20d55e0795da094336075d69.bindPopup(popup_c858dc953fa6df2622973c2fa67f99cb)
+        ;
+
+        
+    
+    
+            marker_f2e1aadd20d55e0795da094336075d69.bindTooltip(
+                `<div>
+                     Malda
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f4c7c7ec568f00e04364c72d6a3231b0 = L.marker(
+                [21.197096, 72.840075],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_85c8269177a7e117b4156beed09272bc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_f4c7c7ec568f00e04364c72d6a3231b0.setIcon(icon_85c8269177a7e117b4156beed09272bc);
+        
+    
+        var popup_d7a8bf5e6fd881005d11f43004c7afc4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7104a5a01233c37eafb77dc5b4c20b4b = $(`<div id="html_7104a5a01233c37eafb77dc5b4c20b4b" style="width: 100.0%; height: 100.0%;">Surat, Gujarat</div>`)[0];
+                popup_d7a8bf5e6fd881005d11f43004c7afc4.setContent(html_7104a5a01233c37eafb77dc5b4c20b4b);
+            
+        
+
+        marker_f4c7c7ec568f00e04364c72d6a3231b0.bindPopup(popup_d7a8bf5e6fd881005d11f43004c7afc4)
+        ;
+
+        
+    
+    
+            marker_f4c7c7ec568f00e04364c72d6a3231b0.bindTooltip(
+                `<div>
+                     Surat
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a2f0fdc596d2e2426f35f53805fb92ae = L.marker(
+                [21.15335, 79.095673],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_67248a946484eb86311667e3e7926574 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkblue", "prefix": "glyphicon"}
+            );
+            marker_a2f0fdc596d2e2426f35f53805fb92ae.setIcon(icon_67248a946484eb86311667e3e7926574);
+        
+    
+        var popup_b1b264302b625e1130a438ac289f72af = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2321b4d4870e5d38b97bf720144eecf5 = $(`<div id="html_2321b4d4870e5d38b97bf720144eecf5" style="width: 100.0%; height: 100.0%;">Nagpur, Maharashtra</div>`)[0];
+                popup_b1b264302b625e1130a438ac289f72af.setContent(html_2321b4d4870e5d38b97bf720144eecf5);
+            
+        
+
+        marker_a2f0fdc596d2e2426f35f53805fb92ae.bindPopup(popup_b1b264302b625e1130a438ac289f72af)
+        ;
+
+        
+    
+    
+            marker_a2f0fdc596d2e2426f35f53805fb92ae.bindTooltip(
+                `<div>
+                     Nagpur
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8cb31c5307667570c8d1d9e07bccee61 = L.marker(
+                [20.933012, 77.774769],
+                {}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            var icon_2848df9f9d62f836ccbe478f8d1bfe94 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkblue", "prefix": "glyphicon"}
+            );
+            marker_8cb31c5307667570c8d1d9e07bccee61.setIcon(icon_2848df9f9d62f836ccbe478f8d1bfe94);
+        
+    
+        var popup_9d49b00aa89065be15e303c6195cba03 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c2d829ddeeed4c87a0b6c21c332a1782 = $(`<div id="html_c2d829ddeeed4c87a0b6c21c332a1782" style="width: 100.0%; height: 100.0%;">Amravati, Maharashtra</div>`)[0];
+                popup_9d49b00aa89065be15e303c6195cba03.setContent(html_c2d829ddeeed4c87a0b6c21c332a1782);
+            
+        
+
+        marker_8cb31c5307667570c8d1d9e07bccee61.bindPopup(popup_9d49b00aa89065be15e303c6195cba03)
+        ;
+
+        
+    
+    
+            marker_8cb31c5307667570c8d1d9e07bccee61.bindTooltip(
+                `<div>
+                     Amravati
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_782784260dc0a28f24b18957a27d5b52 = L.polyline(
+                [[28.613407, 77.216016], [28.679142, 77.209021]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_782784260dc0a28f24b18957a27d5b52.bindTooltip(
+                `<div>
+                     New Delhi ↔ North Delhi: 7.34 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_52c767ffffd2fbad6872f322f7d00d62 = L.polyline(
+                [[28.613407, 77.216016], [28.543145, 77.160732]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_52c767ffffd2fbad6872f322f7d00d62.bindTooltip(
+                `<div>
+                     New Delhi ↔ South Delhi: 9.50 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_de04df279baec9d876dec707a011f902 = L.polyline(
+                [[22.572912, 88.361454], [22.587306, 88.258067]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_de04df279baec9d876dec707a011f902.bindTooltip(
+                `<div>
+                     Kolkata ↔ Howrah: 10.73 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_cdc0008eadcb9c88b149bc8e88d9ceb6 = L.polyline(
+                [[19.073313, 72.873124], [19.033618, 73.035662]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_cdc0008eadcb9c88b149bc8e88d9ceb6.bindTooltip(
+                `<div>
+                     Mumbai ↔ Navi Mumbai: 17.64 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_12da80d6a514cd82bba418d36db13f80 = L.polyline(
+                [[19.073313, 72.873124], [19.226139, 72.988056]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_12da80d6a514cd82bba418d36db13f80.bindTooltip(
+                `<div>
+                     Mumbai ↔ Thane: 20.85 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_7876be26c66221ec2af451027eacc062 = L.polyline(
+                [[20.286648, 85.819319], [20.471047, 85.87992]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_7876be26c66221ec2af451027eacc062.bindTooltip(
+                `<div>
+                     Bhubaneswar ↔ Cuttack: 21.46 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_24bdb218a3eafdf6efc84b5e99319ffa = L.polyline(
+                [[26.726044, 88.394222], [27.044137, 88.269625]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_24bdb218a3eafdf6efc84b5e99319ffa.bindTooltip(
+                `<div>
+                     Siliguri ↔ Darjeeling: 37.47 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_f72ce44076f4180fcf23e6a74a8e6216 = L.polyline(
+                [[23.521529, 87.305634], [23.669562, 86.943659]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_f72ce44076f4180fcf23e6a74a8e6216.bindTooltip(
+                `<div>
+                     Durgapur ↔ Asansol: 40.39 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_98edc23de94eed593fc666da29fa7f21 = L.polyline(
+                [[21.464943, 83.977969], [21.861882, 84.015541]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_98edc23de94eed593fc666da29fa7f21.bindTooltip(
+                `<div>
+                     Sambalpur ↔ Jharsuguda: 44.31 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_a8bdb258b27297d1c24bc2d3fabbee3b = L.polyline(
+                [[21.494781, 86.941383], [21.928826, 86.733417]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_a8bdb258b27297d1c24bc2d3fabbee3b.bindTooltip(
+                `<div>
+                     Balasore ↔ Baripada: 52.83 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_0bdc8bea880121ebc9a6ff7a4974c51c = L.polyline(
+                [[20.286648, 85.819319], [19.810011, 85.827176]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_0bdc8bea880121ebc9a6ff7a4974c51c.bindTooltip(
+                `<div>
+                     Bhubaneswar ↔ Puri: 53.01 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_153639306cc3a785528a1049add94395 = L.polyline(
+                [[22.587306, 88.258067], [22.064258, 88.11926]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_153639306cc3a785528a1049add94395.bindTooltip(
+                `<div>
+                     Howrah ↔ Haldia: 59.89 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_133a28d2c42853b0acbf8eec633d6d93 = L.polyline(
+                [[23.521529, 87.305634], [23.232716, 87.85383]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_133a28d2c42853b0acbf8eec633d6d93.bindTooltip(
+                `<div>
+                     Durgapur ↔ Bardhaman: 64.51 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_ff93fc169a3cfcc2381bb4ed31f8f3f5 = L.polyline(
+                [[22.349619, 87.236139], [21.928826, 86.733417]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_ff93fc169a3cfcc2381bb4ed31f8f3f5.bindTooltip(
+                `<div>
+                     Kharagpur ↔ Baripada: 69.79 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_58d26ee1d64e597ca85d0b0bbcd08a15 = L.polyline(
+                [[22.587306, 88.258067], [23.232716, 87.85383]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_58d26ee1d64e597ca85d0b0bbcd08a15.bindTooltip(
+                `<div>
+                     Howrah ↔ Bardhaman: 82.85 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_f347d4422c7312b28bf873248a420dbd = L.polyline(
+                [[20.471047, 85.87992], [20.848924, 85.106252]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_f347d4422c7312b28bf873248a420dbd.bindTooltip(
+                `<div>
+                     Cuttack ↔ Angul: 90.80 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_fbbfb992142cad472527a784c7e7c923 = L.polyline(
+                [[22.349619, 87.236139], [22.064258, 88.11926]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_fbbfb992142cad472527a784c7e7c923.bindTooltip(
+                `<div>
+                     Kharagpur ↔ Haldia: 96.29 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_17c69320429130acc77b41405d9f356b = L.polyline(
+                [[22.258521, 84.847716], [21.861882, 84.015541]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_17c69320429130acc77b41405d9f356b.bindTooltip(
+                `<div>
+                     Rourkela ↔ Jharsuguda: 96.44 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_a9df3b19cec2f888ccb9be165c999de2 = L.polyline(
+                [[23.030405, 72.562137], [22.310696, 73.192635]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_a9df3b19cec2f888ccb9be165c999de2.bindTooltip(
+                `<div>
+                     Ahmedabad ↔ Vadodara: 102.90 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_05b11deb04a22583ae7469c8353df320 = L.polyline(
+                [[18.526, 73.862396], [19.033618, 73.035662]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_05b11deb04a22583ae7469c8353df320.bindTooltip(
+                `<div>
+                     Pune ↔ Navi Mumbai: 103.73 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_60a99357020789a6c4118723dec255c4 = L.polyline(
+                [[20.005171, 73.795204], [19.226139, 72.988056]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_60a99357020789a6c4118723dec255c4.bindTooltip(
+                `<div>
+                     Nashik ↔ Thane: 121.04 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_282d3fd33cc99857a4c5cbe9953c3066 = L.polyline(
+                [[19.315731, 84.792629], [19.810011, 85.827176]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_282d3fd33cc99857a4c5cbe9953c3066.bindTooltip(
+                `<div>
+                     Berhampur ↔ Puri: 121.53 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_7d43c20650711b12814220ccb5183dfc = L.polyline(
+                [[21.197096, 72.840075], [22.310696, 73.192635]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_7d43c20650711b12814220ccb5183dfc.bindTooltip(
+                `<div>
+                     Surat ↔ Vadodara: 129.07 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_0d994364772d64d970662fc415627f15 = L.polyline(
+                [[21.464943, 83.977969], [20.848924, 85.106252]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_0d994364772d64d970662fc415627f15.bindTooltip(
+                `<div>
+                     Sambalpur ↔ Angul: 135.58 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_fa3d24287405c29e2104ff409321411e = L.polyline(
+                [[21.15335, 79.095673], [20.933012, 77.774769]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_fa3d24287405c29e2104ff409321411e.bindTooltip(
+                `<div>
+                     Nagpur ↔ Amravati: 139.25 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_e4eb002caabba2f53a0ea12b511af920 = L.polyline(
+                [[20.471047, 85.87992], [21.494781, 86.941383]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_e4eb002caabba2f53a0ea12b511af920.bindTooltip(
+                `<div>
+                     Cuttack ↔ Balasore: 158.44 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_0413a4ccc352a9de1bccf4498bee9f67 = L.polyline(
+                [[20.005171, 73.795204], [19.877461, 75.350927]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_0413a4ccc352a9de1bccf4498bee9f67.bindTooltip(
+                `<div>
+                     Nashik ↔ Aurangabad: 163.23 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_6533feb00398bf97ea6af1f14c8a1984 = L.polyline(
+                [[20.005171, 73.795204], [21.197096, 72.840075]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_6533feb00398bf97ea6af1f14c8a1984.bindTooltip(
+                `<div>
+                     Nashik ↔ Surat: 165.68 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_5fc9a9c09b1a219fc48ba8c5c6761da2 = L.polyline(
+                [[11.016844, 76.955832], [9.925201, 78.119775]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_5fc9a9c09b1a219fc48ba8c5c6761da2.bindTooltip(
+                `<div>
+                     Coimbatore ↔ Madurai: 175.87 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_f461bf58af3cf03dabf6dc4bcbbecfbf = L.polyline(
+                [[23.521529, 87.305634], [25.017916, 88.139606]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_f461bf58af3cf03dabf6dc4bcbbecfbf.bindTooltip(
+                `<div>
+                     Durgapur ↔ Malda: 186.63 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_303bf1fb905ca081e0f7c2e49f52c2b5 = L.polyline(
+                [[26.726044, 88.394222], [25.017916, 88.139606]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_303bf1fb905ca081e0f7c2e49f52c2b5.bindTooltip(
+                `<div>
+                     Siliguri ↔ Malda: 191.64 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_9456cba1fe9b772087913cba54969249 = L.polyline(
+                [[23.030405, 72.562137], [22.291606, 70.793217]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_9456cba1fe9b772087913cba54969249.bindTooltip(
+                `<div>
+                     Ahmedabad ↔ Rajkot: 199.23 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_d34061e8c3d443be69d5f43377f15d63 = L.polyline(
+                [[18.526, 73.862396], [16.699147, 74.235303]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_d34061e8c3d443be69d5f43377f15d63.bindTooltip(
+                `<div>
+                     Pune ↔ Kolhapur: 206.95 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_6dc24c98e26320249bdf51a3efc4891e = L.polyline(
+                [[17.65678, 75.907452], [16.699147, 74.235303]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_6dc24c98e26320249bdf51a3efc4891e.bindTooltip(
+                `<div>
+                     Solapur ↔ Kolhapur: 207.11 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_173b426fa99218a4e81cc45f908cffeb = L.polyline(
+                [[19.877461, 75.350927], [20.933012, 77.774769]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_173b426fa99218a4e81cc45f908cffeb.bindTooltip(
+                `<div>
+                     Aurangabad ↔ Amravati: 278.54 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_51a66ba03c9895f5e389d776e1f5e255 = L.polyline(
+                [[13.084113, 80.267506], [9.925201, 78.119775]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_51a66ba03c9895f5e389d776e1f5e255.bindTooltip(
+                `<div>
+                     Chennai ↔ Madurai: 422.05 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_31f16cccc2383f2fb0fe7b43f468d2e6 = L.polyline(
+                [[21.464943, 83.977969], [21.15335, 79.095673]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_31f16cccc2383f2fb0fe7b43f468d2e6.bindTooltip(
+                `<div>
+                     Sambalpur ↔ Nagpur: 506.94 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_dbf668d1c3ba3d1937f9938732ccdd22 = L.polyline(
+                [[17.65678, 75.907452], [13.084113, 80.267506]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_dbf668d1c3ba3d1937f9938732ccdd22.bindTooltip(
+                `<div>
+                     Solapur ↔ Chennai: 690.59 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_6f8c32471ad29bb6be3549ffae357670 = L.polyline(
+                [[28.543145, 77.160732], [23.030405, 72.562137]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_609b2b961cdd14fb1f8982edac726142);
+        
+    
+            poly_line_6f8c32471ad29bb6be3549ffae357670.bindTooltip(
+                `<div>
+                     South Delhi ↔ Ahmedabad: 766.45 km
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+</html>
